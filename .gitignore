@@ -1,0 +1,12 @@
+# Ignorar a build do Next.js
+.next/
+
+# Ignorar dependências
+node_modules/
+
+# Ignorar logs e arquivos de sistema
+*.log
+.DS_Store
+
+# Ignorar configurações locais do VS Code
+.vscode/
