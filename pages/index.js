@@ -19,6 +19,7 @@ export default function Home() {
         "APERTA O SIIIIIIIIIIIIIIMMMMMMMM"
     ];
 
+    const [customTitle, setCustomTitle] = useState('');
     const [message, setMessage] = useState('');
     const [titleIndex, setTitleIndex] = useState(-1);
     const [noBtnStyle, setNoBtnStyle] = useState({});
@@ -28,11 +29,12 @@ export default function Home() {
 
     const handleYesClick = () => {
         setMessage('BOOOAAA 🔥🥋');
-        setBgColor('#1e1e2e'); // muda cor de fundo temporariamente
+        setCustomTitle('OBRIGADOOO');
+        setBgColor('#1e1e2e');
 
-        // volta para o fundo preto depois de 1.5s
         setTimeout(() => setBgColor('black'), 1500);
     };
+
 
     const handleNoClick = () => {
         setNoClicks(prev => prev + 1);
@@ -65,8 +67,9 @@ export default function Home() {
             transition: 'background-color 0.5s ease'
         }}>
             <h1 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>
-                {titleIndex === -1 ? 'O Vini merece a faixa roxa?' : titles[titleIndex]}
+                {customTitle || (titleIndex === -1 ? 'O Vini merece a faixa roxa?' : titles[titleIndex])}
             </h1>
+
 
             {/* Botões centralizados inicialmente */}
             <div style={{ display: 'flex', gap: '2rem' }}>
